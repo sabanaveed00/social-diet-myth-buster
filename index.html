@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diet Myth Checker — Red, Yellow, Green Risk Flags</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>🥗 Diet Myth Checker</h1>
+      <p class="tagline">Search a diet claim and see how dangerous it really is.</p>
+    </header>
+
+    <section class="search-area">
+      <div class="search-box">
+        <span class="search-icon">🔎</span>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Try 'detox tea', 'juice cleanse', 'keto', 'fat burner'..."
+          autocomplete="off"
+        />
+        <button id="clear-btn" class="clear-btn" hidden aria-label="Clear search">✕</button>
+      </div>
+
+      <div class="chip-row" id="suggestion-chips">
+        <span class="chip-label">Try:</span>
+      </div>
+
+      <div class="filter-row" id="filter-row">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="red">🔴 Dangerous</button>
+        <button class="filter-btn" data-filter="yellow">🟡 Caution</button>
+        <button class="filter-btn" data-filter="green">🟢 Low Risk</button>
+      </div>
+    </section>
+
+    <div class="legend">
+      <div class="legend-item"><span class="dot dot-red"></span> Dangerous — can cause real physical harm</div>
+      <div class="legend-item"><span class="dot dot-yellow"></span> Caution — misleading, may cause poor choices</div>
+      <div class="legend-item"><span class="dot dot-green"></span> Low Risk — false or harmless, unlikely to hurt you</div>
+    </div>
+
+    <main>
+      <p class="result-count" id="result-count"></p>
+      <div class="results-grid" id="results-grid"></div>
+      <div class="no-results" id="no-results" hidden>
+        <p>No matching myths found.</p>
+        <p class="no-results-sub">Try a different keyword, or browse by category below.</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Built with HTML, CSS &amp; JavaScript. This tool is for general education and is not medical advice — always consult a qualified healthcare professional before changing your diet.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
